@@ -6,9 +6,13 @@ import { toast } from 'react-toastify';
 function AddTodo() {
     const dispatch = useDispatch()
     const [todoValue, setTodoValue] = useState("");
-  
+  const submitHandler = e=>{
+    e.preventDefault()
+    if(!todoValue)return 
+    dispatch(addTodo({title:todoValue}))
+  }
   return (
-    <form className="addTodo">
+    <form className="addTodo" onSubmit={(e) => submitHandler(e)}>
     <div className="addInputWrapper">
       <TextField
         id="outlined-basic"
@@ -22,7 +26,6 @@ function AddTodo() {
     <Button
       type="submit"
       variant="contained"
-      onClick={(e) => {dispatch(addTodo({title:todoValue,e})),setTodoValue("")}}
     >
       Add
     </Button>

@@ -1,0 +1,48 @@
+.addTodo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.addInputWrapper {
+  width: 90%;
+}
+.todoList {
+  margin-top: 1rem;
+  width: 100%;
+}
+.todoItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1rem;
+  border: 1px solid rgb(192, 189, 189);
+  border-radius: 10px;
+}
+.todoFunctionBtn {
+  all: unset;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  display: grid;
+  cursor: pointer;
+}
+
+.check {
+  color: green;
+
+}
+.trash {
+  color: red;
+}
+.todoTitle{
+  margin-left: 1rem;
+}
+.todoFunctions{
+  display: flex;
+  align-items: center;
+}
+.completed{
+  text-decoration: line-through;
+  opacity: 0.5;
+}

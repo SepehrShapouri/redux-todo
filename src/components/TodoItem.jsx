@@ -1,7 +1,7 @@
 import React from "react";
 import { FaTrashAlt, FaCheckCircle } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import { completeTodo, deleteTodo } from "./features/todoSlice";
+import { deleteAsyncTodo, toggleAsyncTodo,} from "./features/todoSlice";
 function TodoItem({ todo }) {
   const dispatch = useDispatch();
   return (
@@ -10,13 +10,13 @@ function TodoItem({ todo }) {
       <span className="todoFunctions">
         <button
           className="todoFunctionBtn check"
-          onClick={() => dispatch(completeTodo(todo.id))}
+          onClick={()=>dispatch(toggleAsyncTodo({id:todo.id,completed:!todo.completed}))}
         >
           <FaCheckCircle />
         </button>
         <button
           className="todoFunctionBtn trash"
-          onClick={() => dispatch(deleteTodo(todo.id))}
+          onClick={() => dispatch(deleteAsyncTodo(todo.id))}
         >
           <FaTrashAlt />
         </button>

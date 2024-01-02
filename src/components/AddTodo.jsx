@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, TextField } from "@mui/material/";
 import { useDispatch } from 'react-redux';
-import { addTodo } from './features/todoSlice';
+import { addAsyncTodo} from './features/todoSlice';
 import { toast } from 'react-toastify';
 function AddTodo() {
     const dispatch = useDispatch()
@@ -9,7 +9,8 @@ function AddTodo() {
   const submitHandler = e=>{
     e.preventDefault()
     if(!todoValue)return 
-    dispatch(addTodo({title:todoValue}))
+    dispatch(addAsyncTodo({title:todoValue}))
+    setTodoValue("")
   }
   return (
     <form className="addTodo" onSubmit={(e) => submitHandler(e)}>
